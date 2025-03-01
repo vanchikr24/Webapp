@@ -1,1 +1,51 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Downloader</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        input {
+            padding: 10px;
+            width: 80%;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            background: #0088cc;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+<h2>YouTube Video Downloader</h2>
+<input type="text" id="link" placeholder="Вставте посилання на YouTube">
+<br>
+<button onclick="downloadVideo()">Скачати</button>
 
+<script>
+    Telegram.WebApp.ready();
+
+    function downloadVideo() {
+        const link = document.getElementById("link").value;
+        if (link === "") {
+            alert("Введіть посилання!");
+            return;
+        }
+
+        const botLink = `https://t.me/SaveVideoBot?start=yt_${encodeURIComponent(link)}`;
+
+        Telegram.WebApp.openLink(botLink);
+    }
+</script>
+</body>
+</html>
