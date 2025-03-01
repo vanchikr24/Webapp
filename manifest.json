@@ -1,8 +1,0 @@
-{
-  "name": "YouTube Downloader",
-  "short_name": "YT Downloader",
-  "start_url": "index.html",
-  "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#0088cc"
-}
